@@ -130,6 +130,18 @@ int main() {
           std::cout << "highest w " << highest_weight << std::endl;
           std::cout << "average w " << weight_sum/num_particles << std::endl;
 
+          /** Visualize the best landmark and sense coordinates for debugging
+          for (int a=0; a<best_particle.associations.size(); ++a){
+            double landmark_x = map.landmark_list[best_particle.associations[a]].x_f;
+            double landmark_y = map.landmark_list[best_particle.associations[a]].y_f;
+            double sense_x = best_particle.sense_x[a];
+            double sense_y = best_particle.sense_y[a];
+            double sigma_x = sigma_landmark[0];
+            double sigma_y = sigma_landmark[1];
+            std::cout << landmark_x << " " << landmark_y << " " << sense_x << " " << sense_y << " " << sigma_x << " " << sigma_y << std::endl;
+          }
+          */
+         
           json msgJson;
           msgJson["best_particle_x"] = best_particle.x;
           msgJson["best_particle_y"] = best_particle.y;
